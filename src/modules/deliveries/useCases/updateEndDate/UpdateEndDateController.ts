@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
-import UpdateDeliverymanUseCase from "./UpdateDeliverymanUseCase";
+import UpdateEndDateUseCase from "./UpdateEndDateUseCase";
 
-export class UpdateDeliverymanController{
+export class UpdateEndDateController{
     async handle(req: Request, res: Response){
         console.log(req.body);
         const {id_deliveryman} = req;
         const {id: id_delivery} = req.params;
         
-        const updateDeliverymanUseCase = new UpdateDeliverymanUseCase();
+        const updateEndDateUseCase = new UpdateEndDateUseCase();
 
-        const delivery = await updateDeliverymanUseCase.execute({
+        const delivery = await updateEndDateUseCase.execute({
             id_deliveryman, 
             id_delivery,
         });
